@@ -9,10 +9,15 @@ const parserLoaded = loadParser();
 const graphContainer = document.getElementById("graph");
 
 const textarea = document.getElementById("code");
-textarea.value = 'd1 $ s "hh(3,8)"';
-textarea.addEventListener("input", (e) =>
-  renderGraph(e.target.value, graphContainer)
-);
+if (window.location.hash) {
+  textarea.value = atob(window.location.hash.slice(1));
+} else {
+  textarea.value = 'd1 $ s "hh(3,8)"';
+}
+textarea.addEventListener("input", (e) => {
+  window.location.hash = btoa(e.target.value);
+  renderGraph(e.target.value, graphContainer);
+});
 renderGraph(textarea.value, graphContainer);
 
 function walk(node, branch = [0], parent) {
