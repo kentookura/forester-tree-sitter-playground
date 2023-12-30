@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir docs",
-    "preview": "vite preview --outDir docs"
+    "build": "vite build --outDir docs --base /haskell-tree-sitter-playground",
+    "preview": "vite preview --outDir docs --base /haskell-tree-sitter-playground"
   },
   "devDependencies": {
     "tree-sitter": "^0.20.6",
