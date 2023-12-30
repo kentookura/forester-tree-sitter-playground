@@ -2,7 +2,7 @@ import Parser from "web-tree-sitter";
 import toDot from "jgf-dot";
 import { Graphviz } from "@hpcc-js/wasm";
 
-let base = "/haskell-tree-sitter-playground";
+const base = import.meta.env.BASE_URL;
 
 const graphvizLoaded = Graphviz.load();
 const parserLoaded = loadParser();
@@ -53,11 +53,11 @@ async function renderGraph(code, container) {
 async function loadParser() {
   await Parser.init({
     locateFile(scriptName, scriptDirectory) {
-      return `${base}/${scriptName}`;
+      return `${base}${scriptName}`;
     },
   });
   const parser = new Parser();
-  const Lang = await Parser.Language.load(`${base}/tree-sitter-haskell.wasm`);
+  const Lang = await Parser.Language.load(`${base}tree-sitter-haskell.wasm`);
   parser.setLanguage(Lang);
   return parser;
 }
