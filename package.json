@@ -1,12 +1,12 @@
 {
-  "name": "haskell",
+  "name": "forester-tree-sitter-playground",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --outDir docs --base /haskell-tree-sitter-playground/",
-    "preview": "vite preview --outDir docs --base /haskell-tree-sitter-playground/"
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "tree-sitter": "^0.20.6",

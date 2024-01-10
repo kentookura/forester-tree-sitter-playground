@@ -11,7 +11,7 @@ const textarea = document.getElementById("code");
 if (window.location.hash) {
   textarea.value = atob(window.location.hash.slice(1));
 } else {
-  textarea.value = 'd1 $ s "hh(3,8)"';
+  textarea.value = '\\transclude{foo-0001}';
 }
 
 textarea.addEventListener("input", (e) => {
